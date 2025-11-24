@@ -1,9 +1,13 @@
 package gg.jte.generated.ondemand;
 public final class JteindexGenerated {
 	public static final String JTE_NAME = "index.jte";
-	public static final int[] JTE_LINE_INFO = {15,15,15,15,15,15,15,15,15,15,15};
+	public static final int[] JTE_LINE_INFO = {0,0,0,0,0,2,2,6,6,6,6,6,6,6,6};
 	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor) {
-		jteOutput.writeContent("<!doctype html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <title>Hello Hexlet!</title>\r\n</head>\r\n<body>\r\n<div class=\"col-lg-8 mx-auto p-4 py-md-5\">\r\n    <main>\r\n        <h1 class=\"text-body-emphasis\">Привет, Хекслет!</h1>\r\n        <p>Javalin + jte</p>\r\n    </main>\r\n</div>\r\n</body>\r\n</html>");
+		gg.jte.generated.ondemand.layout.JtepageGenerated.render(jteOutput, jteHtmlInterceptor, new gg.jte.html.HtmlContent() {
+			public void writeTo(gg.jte.html.HtmlTemplateOutput jteOutput) {
+				jteOutput.writeContent("\r\n    <h1>Добро пожаловать на образовательную платформу!</h1>\r\n    <p>Изучайте программирование с нашими курсами</p>\r\n    <a href=\"/courses\">Перейти к курсам →</a>\r\n");
+			}
+		});
 	}
 	public static void renderMap(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, java.util.Map<String, Object> params) {
 		render(jteOutput, jteHtmlInterceptor);

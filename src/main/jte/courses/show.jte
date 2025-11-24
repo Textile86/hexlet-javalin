@@ -1,8 +1,10 @@
 @import org.example.hexlet.dto.courses.CoursePage
 @param CoursePage page
 
-<!-- Для наглядности мы не стали включать сюда основную структуру HTML -->
-<main>
+@template.layout.page(
+content = @`
     <h1>${page.getCourse().getName()}</h1>
-    <p>${page.getCourse().getDescription()}</p>
-</main>
+    <p><strong>Описание:</strong> ${page.getCourse().getDescription()}</p>
+    <a href="/courses">← Назад к списку курсов</a>
+`
+)
