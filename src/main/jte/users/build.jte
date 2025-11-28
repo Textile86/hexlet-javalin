@@ -1,3 +1,15 @@
+@import org.example.hexlet.dto.users.BuildUserPage
+@param BuildUserPage page
+
+@if(page.getErrors() != null)
+    <ul>
+        @for(var validator : page.getErrors().values())
+            @for(var error : validator)
+                <li>${error.getMessage()}</li>
+            @endfor
+        @endfor
+    </ul>
+@endif
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,13 +22,13 @@
     <div>
         <label>
             Имя
-            <input type="text" name="name" />
+            <input type="text" name="name" value="${page.getName()}" />
         </label>
     </div>
     <div>
         <label>
             Email
-            <input type="email" required name="email" />
+            <input type="email" required name="email" value="${page.getEmail()}" />
         </label>
     </div>
     <div>
