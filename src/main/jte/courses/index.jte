@@ -1,4 +1,5 @@
 @import org.example.hexlet.dto.courses.CoursesPage
+@import org.example.hexlet.model.NamedRoutes
 @param CoursesPage page
 
 <!DOCTYPE html>
@@ -13,11 +14,11 @@
 
 <!-- КНОПКА ДОБАВЛЕНИЯ КУРСА -->
 <div style="margin-bottom: 20px;">
-    <a href="/courses/build">+ Добавить курс</a>
+    <a href="${NamedRoutes.buildCoursesPath()}">+ Добавить курс</a>
 </div>
 
 <!-- ПОИСКОВАЯ ФОРМА -->
-<form action="/courses" method="get">
+<form action="${NamedRoutes.coursesPath()}" method="get">
     <input
             type="search"
             name="term"
@@ -38,7 +39,7 @@
     @for(var course : page.getCourses())
         <div>
             <h2>
-                <a href="/courses/${course.getId()}">
+                <a href="${NamedRoutes.coursePath(course.getId().toString())}">
                     ${course.getName()}
                 </a>
             </h2>

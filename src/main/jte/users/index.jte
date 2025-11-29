@@ -1,3 +1,4 @@
+@import org.example.hexlet.model.NamedRoutes
 @import org.example.hexlet.model.User
 @import java.util.List
 @param List<User> users
@@ -13,7 +14,7 @@
 <body>
 <div class="container mt-4">
     <h1>Список пользователей</h1>
-    <a href="/users/build" class="btn btn-primary mb-3">Добавить пользователя</a>
+    <a href="${NamedRoutes.buildUsersPath()}" class="btn btn-primary mb-3">Добавить пользователя</a>
 
     @if(users.isEmpty())
         <p>Пользователей пока нет</p>

@@ -1,4 +1,5 @@
 @import org.example.hexlet.dto.users.BuildUserPage
+@import org.example.hexlet.model.NamedRoutes
 @param BuildUserPage page
 
 @if(page.getErrors() != null)
@@ -18,7 +19,7 @@
     <title>Регистрация</title>
 </head>
 <body>
-<form action="/users" method="post">
+<form action="${NamedRoutes.usersPath()}" method="post">
     <div>
         <label>
             Имя
