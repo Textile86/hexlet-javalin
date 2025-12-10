@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../hexlet-ci-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../hexlet-git" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../hexlet-git/test" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../hexlet-java" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../hexlet-my-first-workflow" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../io" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../io/java-package/java-package" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../java-project-61" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../java-project-71" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../java-project-78" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../pg-dump-example" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
 </project>

@@ -33,5 +33,12 @@ public class NamedRoutes {
         return "/us/" + id;
     }
 
+    public static String sessionsPath() {
+        return "/sessions";
+    }
+
+    public static String buildSessionsPath() {
+        return "/sessions/build";
+    }
 
 }

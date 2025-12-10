@@ -7,5 +7,6 @@ content = @`
     <h1>${page.getCourse().getName()}</h1>
     <p><strong>Описание:</strong> ${page.getCourse().getDescription()}</p>
     <a href="${NamedRoutes.coursesPath()}">← Назад к списку курсов</a>
-`
+`,
+page = null
 )

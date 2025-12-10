@@ -2,50 +2,45 @@
 @import org.example.hexlet.model.NamedRoutes
 @param CoursesPage page
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Курсы по программированию</title>
-</head>
-<body>
-<h1>${page.getHeader()}</h1>
+@template.layout.page(
+content = @`
+    <h1>${page.getHeader()}</h1>
 
-<!-- КНОПКА ДОБАВЛЕНИЯ КУРСА -->
-<div style="margin-bottom: 20px;">
-    <a href="${NamedRoutes.buildCoursesPath()}">+ Добавить курс</a>
-</div>
+    <!-- КНОПКА ДОБАВЛЕНИЯ КУРСА -->
+    <div style="margin-bottom: 20px;">
+        <a href="${NamedRoutes.buildCoursesPath()}">+ Добавить курс</a>
+    </div>
 
-<!-- ПОИСКОВАЯ ФОРМА -->
-<form action="${NamedRoutes.coursesPath()}" method="get">
-    <input
-            type="search"
-            name="term"
-            placeholder="Введите название или описание курса..."
-            value="${page.getTerm() != null ? page.getTerm() : ""}"
-    >
-    <input type="submit" value="Искать">
-</form>
+    <!-- ПОИСКОВАЯ ФОРМА -->
+    <form action="${NamedRoutes.coursesPath()}" method="get">
+        <input
+                type="search"
+                name="term"
+                placeholder="Введите название или описание курса..."
+                value="${page.getTerm() != null ? page.getTerm() : ""}"
+        >
+        <input type="submit" value="Искать">
+    </form>
 
-<!-- СПИСОК КУРСОВ -->
-@if(page.getCourses().isEmpty())
-    @if(page.getTerm() == null || page.getTerm().isEmpty())
-        <p>Пока не добавлено ни одного курса</p>
+    <!-- СПИСОК КУРСОВ -->
+    @if(page.getCourses().isEmpty())
+        @if(page.getTerm() == null || page.getTerm().isEmpty())
+            <p>Пока не добавлено ни одного курса</p>
+        @else
+            <p>По запросу "${page.getTerm()}" ничего не найдено</p>
+        @endif
     @else
-        <p>По запросу "${page.getTerm()}" ничего не найдено</p>
+        @for(var course : page.getCourses())
+            <div>
+                <h2>
+                    <a href="${NamedRoutes.coursePath(course.getId().toString())}">
+                        ${course.getName()}
+                    </a>
+                </h2>
+                <p>${course.getDescription()}</p>
+            </div>
+        @endfor
     @endif
-@else
-    @for(var course : page.getCourses())
-        <div>
-            <h2>
-                <a href="${NamedRoutes.coursePath(course.getId().toString())}">
-                    ${course.getName()}
-                </a>
-            </h2>
-            <p>${course.getDescription()}</p>
-        </div>
-    @endfor
-@endif
-</body>
-</html>
+`,
+page = page
+)
