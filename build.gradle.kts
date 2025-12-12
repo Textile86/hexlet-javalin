@@ -1,7 +1,18 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath("com.github.johnrengelman:shadow:8.1.1")
+    }
+}
+
 plugins {
     id("java")
     application
 }
+
+apply(plugin = "com.github.johnrengelman.shadow")
 
 application {
     mainClass.set("org.example.hexlet.HelloWorld")
@@ -21,7 +32,7 @@ dependencies {
     implementation("gg.jte:jte:3.1.9")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-
+    implementation("org.postgresql:postgresql:42.7.1")
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
     implementation("org.apache.commons:commons-text:1.14.0")
